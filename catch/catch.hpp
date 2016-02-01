@@ -3440,6 +3440,11 @@ namespace Tbc {
 STITCH_CLARA_OPEN_NAMESPACE
 #endif
 
+#ifdef _MSC_VER
+#pragma warning(push)
+#pragma warning(disable:4702) // unreachable code
+#endif
+
 namespace Clara {
 
     struct UnpositionalTag {};
@@ -4108,6 +4113,10 @@ namespace Clara {
     };
 
 } // end namespace Clara
+
+#ifdef _MSC_VER
+#pragma warning(pop)
+#endif
 
 STITCH_CLARA_CLOSE_NAMESPACE
 #undef STITCH_CLARA_OPEN_NAMESPACE
