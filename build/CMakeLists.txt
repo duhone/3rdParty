@@ -96,3 +96,49 @@ add_library(lzma OBJECT ${lzma_src})
 						
 set_property(TARGET lzma APPEND PROPERTY FOLDER 3rdParty)
 set_property(TARGET lzma APPEND PROPERTY COMPILE_FLAGS "-WX -W3")
+
+###############################################
+#zstd
+###############################################
+INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/../zstd/lib ${PROJECT_SOURCE_DIR}/../zstd/lib/common)
+
+set(ZSTD_PUBLIC_HDRS
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/zstd.h
+)
+
+set(ZSTD_PRIVATE_HDRS
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/common/bitstream.h
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/common/error_private.h
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/common/zstd_errors.h
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/common/fse.h
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/common/huf.h
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/common/mem.h
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/common/zstd_internal.h
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/dictBuilder/zdict.h
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/deprecated/zbuff.h
+)
+
+set(ZSTD_SRCS
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/common/entropy_common.c
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/common/zstd_common.c
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/common/error_private.c
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/common/xxhash.c
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/common/fse_decompress.c
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/compress/fse_compress.c
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/compress/huf_compress.c
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/compress/zstd_compress.c
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/decompress/huf_decompress.c
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/decompress/zstd_decompress.c
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/dictBuilder/divsufsort.c
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/dictBuilder/zdict.c
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/deprecated/zbuff_compress.c
+    ${PROJECT_SOURCE_DIR}/../zstd/lib/deprecated/zbuff_decompress.c
+)
+
+add_library(zstd OBJECT ${ZSTD_PUBLIC_HDRS} 
+	${ZSTD_PRIVATE_HDRS}
+	${ZSTD_SRCS})
+						
+set_property(TARGET zstd APPEND PROPERTY FOLDER 3rdParty)
+set_property(TARGET zstd APPEND PROPERTY COMPILE_FLAGS "-WX -W3")
+			
