@@ -1,6 +1,7 @@
 ###############################################
 #catch
 ###############################################
+include_directories("${CMAKE_CURRENT_LIST_DIR}/../catch")
 
 add_library(catch OBJECT "${CMAKE_CURRENT_LIST_DIR}/../catch/catch.hpp")
 						
@@ -12,6 +13,8 @@ set_property(TARGET catch APPEND PROPERTY COMPILE_FLAGS "-WX -W4")
 #libretro
 ###############################################
 
+include_directories("${CMAKE_CURRENT_LIST_DIR}/../libretro")
+
 add_library(libretro OBJECT "${CMAKE_CURRENT_LIST_DIR}/../libretro/libretro.h")
 						
 set_property(TARGET libretro APPEND PROPERTY FOLDER 3rdParty)
@@ -21,6 +24,8 @@ set_property(TARGET libretro APPEND PROPERTY COMPILE_FLAGS "-WX -W4")
 ###############################################
 #lz4
 ###############################################
+include_directories("${CMAKE_CURRENT_LIST_DIR}/../lz4/lib")
+
 add_library(lz4 OBJECT "${CMAKE_CURRENT_LIST_DIR}/../lz4/lib/lz4.h" 
 	"${CMAKE_CURRENT_LIST_DIR}/../lz4/lib/lz4.c"
 	"${CMAKE_CURRENT_LIST_DIR}/../lz4/lib/lz4hc.h"
@@ -32,6 +37,9 @@ set_property(TARGET lz4 APPEND PROPERTY COMPILE_FLAGS "-WX -W4")
 ###############################################
 #zlib
 ###############################################
+
+include_directories("${CMAKE_CURRENT_LIST_DIR}/../zlib")
+
 set(ZLIB_PUBLIC_HDRS
     ${CMAKE_CURRENT_LIST_DIR}/../zlib/zconf.h
     ${CMAKE_CURRENT_LIST_DIR}/../zlib/zlib.h
@@ -82,6 +90,9 @@ source_group("Source" FILES ${ZLIB_PRIVATE_HDRS} ${ZLIB_SRCS})
 ###############################################
 #lzma
 ###############################################
+
+include_directories("${CMAKE_CURRENT_LIST_DIR}/../lzma/C")
+
 set(LZMA_PUBLIC_HDRS
     ${CMAKE_CURRENT_LIST_DIR}/../lzma/C/LzmaLib.h
 )
@@ -132,6 +143,9 @@ source_group("Source" FILES ${LZMA_PRIVATE_HDRS} ${LZMA_SRCS})
 ###############################################
 #zstd
 ###############################################
+
+include_directories("${CMAKE_CURRENT_LIST_DIR}/../zstd/lib")
+
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_LIST_DIR}/../zstd/lib ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/common)
 
 set(ZSTD_PUBLIC_HDRS
@@ -145,6 +159,7 @@ set(ZSTD_PRIVATE_HDRS
     ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/common/fse.h
     ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/common/huf.h
     ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/common/mem.h
+    ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/common/xxhash.h
     ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/common/zstd_internal.h
     ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/dictBuilder/zdict.h
     ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/deprecated/zbuff.h
