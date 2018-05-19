@@ -123,7 +123,7 @@ with the value of XXH_NAMESPACE (so avoid to keep it NULL and avoid numeric valu
 Note that no change is required within the calling program as long as it includes `xxhash.h` :
 regular symbol name will be automatically translated by this header.
 */
-#ifdef XXH_NAMESPACE
+/*#ifdef XXH_NAMESPACE
 #  define XXH_CAT(A,B) A##B
 #  define XXH_NAME2(A,B) XXH_CAT(A,B)
 #  define XXH32 XXH_NAME2(XXH_NAMESPACE, XXH32)
@@ -145,7 +145,7 @@ regular symbol name will be automatically translated by this header.
 #  define XXH64_canonicalFromHash XXH_NAME2(XXH_NAMESPACE, XXH64_canonicalFromHash)
 #  define XXH32_hashFromCanonical XXH_NAME2(XXH_NAMESPACE, XXH32_hashFromCanonical)
 #  define XXH64_hashFromCanonical XXH_NAME2(XXH_NAMESPACE, XXH64_hashFromCanonical)
-#endif
+#endif*/
 
 
 /* *************************************
