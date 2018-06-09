@@ -25,14 +25,21 @@ set(ZSTD_SRCS
     ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/common/zstd_common.c
     ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/common/error_private.c
     ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/common/xxhash.c
+    ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/common/pool.c
     ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/common/fse_decompress.c
     ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/compress/fse_compress.c
     ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/compress/huf_compress.c
     ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/compress/zstd_compress.c
+    ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/compress/zstd_opt.c
+    ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/compress/zstd_ldm.c
+    ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/compress/zstd_lazy.c
+    ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/compress/zstd_fast.c
+    ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/compress/zstd_double_fast.c
     ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/decompress/huf_decompress.c
     ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/decompress/zstd_decompress.c
     ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/dictBuilder/divsufsort.c
     ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/dictBuilder/zdict.c
+    ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/dictBuilder/cover.c
     ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/deprecated/zbuff_compress.c
     ${CMAKE_CURRENT_LIST_DIR}/../zstd/lib/deprecated/zbuff_decompress.c
 )
