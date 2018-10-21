@@ -13,4 +13,5 @@ include (${CMAKE_CURRENT_SOURCE_DIR}/build_libretro.cmake)
 include (${CMAKE_CURRENT_SOURCE_DIR}/build_zstd.cmake)
 include (${CMAKE_CURRENT_SOURCE_DIR}/build_imgui.cmake)
 include (${CMAKE_CURRENT_SOURCE_DIR}/build_glm.cmake)
+include (${CMAKE_CURRENT_SOURCE_DIR}/build_rapidjson.cmake)
 	
