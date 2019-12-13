@@ -1,9 +1,3 @@
-include_directories("${CMAKE_CURRENT_LIST_DIR}/../opus/include")
-include_directories(PRIVATE "${CMAKE_CURRENT_LIST_DIR}/../opus/celt")
-include_directories(PRIVATE "${CMAKE_CURRENT_LIST_DIR}/../opus/silk")
-include_directories(PRIVATE "${CMAKE_CURRENT_LIST_DIR}/../opus/silk/float")
-include_directories(PRIVATE "${CMAKE_CURRENT_LIST_DIR}/../opus")
-
 set(OPUS_PUBLIC_HDRS
     ${CMAKE_CURRENT_LIST_DIR}/../opus/include/opus.h
     ${CMAKE_CURRENT_LIST_DIR}/../opus/include/opus_custom.h
@@ -320,9 +314,14 @@ add_library(opus OBJECT ${OPUS_PUBLIC_HDRS}
 	${OPUS_SRCS})
 						
 set_property(TARGET opus APPEND PROPERTY FOLDER 3rdParty)
-set_property(TARGET opus APPEND PROPERTY COMPILE_FLAGS "-WX -W1")
 
 target_compile_definitions(opus PRIVATE HAVE_CONFIG_H=1)
+
+target_include_directories(opus PUBLIC "${CMAKE_CURRENT_LIST_DIR}/../opus/include")
+target_include_directories(opus PRIVATE "${CMAKE_CURRENT_LIST_DIR}/../opus/celt")
+target_include_directories(opus PRIVATE "${CMAKE_CURRENT_LIST_DIR}/../opus/silk")
+target_include_directories(opus PRIVATE "${CMAKE_CURRENT_LIST_DIR}/../opus/silk/float")
+target_include_directories(opus PRIVATE "${CMAKE_CURRENT_LIST_DIR}/../opus")
 
 source_group("Public Headers" FILES ${ZSTD_PUBLIC_HDRS})
 source_group("Source" FILES ${OPUS_PRIVATE_HDRS} ${OPUS_SRCS})

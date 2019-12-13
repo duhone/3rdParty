@@ -1,6 +1,5 @@
 set(glfw_root "${CMAKE_CURRENT_LIST_DIR}/../glfw")
 
-
 set(GLFW_PUBLIC_HDRS
     ${glfw_root}/include/GLFW/glfw3.h
 )
