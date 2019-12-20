@@ -17,7 +17,7 @@ set_property(TARGET glfw APPEND PROPERTY FOLDER 3rdParty)
 set_property(TARGET glfw APPEND PROPERTY LINKER_LANGUAGE CPP)
 
 target_include_directories(glfw PUBLIC "${glfw_root}/include")
-target_compile_definitions(glfw PUBLIC GLFW_INCLUDE_NONE GLFW_INCLUDE_VULKAN GLFW_DLL)
+target_compile_definitions(glfw PUBLIC GLFW_INCLUDE_NONE GLFW_INCLUDE_VULKAN GLFW_DLL GLFW_EXPOSE_NATIVE_WIN32)
 target_link_libraries(glfw PUBLIC "${glfw_root}/lib-vc2019/glfw3dll.lib")
 
 source_group("Public Headers" FILES ${GLFW_PUBLIC_HDRS})
