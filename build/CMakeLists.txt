@@ -5,6 +5,7 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 project (3rdParty)
 
 include (${CMAKE_CURRENT_SOURCE_DIR}/../../core/build/common.cmake)
+include (${CMAKE_CURRENT_SOURCE_DIR}/build_amdcompress.cmake)
 include (${CMAKE_CURRENT_SOURCE_DIR}/build_glfw.cmake)
 include (${CMAKE_CURRENT_SOURCE_DIR}/build_glm.cmake)
 include (${CMAKE_CURRENT_SOURCE_DIR}/build_catch.cmake)
