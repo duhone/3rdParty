@@ -8,7 +8,7 @@ set(ROBINMAP_PUBLIC_HDRS
 )
 
 set(ROBINMAP_BUILD
-    ${robinmap_root}/../build/build_catch.cmake
+    ${robinmap_root}/../build/build_robinmap.cmake
 )
 
 add_library(robinmap OBJECT 
