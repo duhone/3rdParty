@@ -1,58 +1,54 @@
-set(zstd_root "${CMAKE_CURRENT_LIST_DIR}/../zstd/lib")
+set(root "${CMAKE_CURRENT_LIST_DIR}/../zstd/lib")
 
-set(ZSTD_PUBLIC_HDRS
-    ${zstd_root}/zstd.h
+set(PUBLIC_HDRS
+    ${root}/zstd.h
 )
 
-set(ZSTD_SRCS
-    ${zstd_root}/common/bitstream.h
-    ${zstd_root}/common/error_private.h
-    ${zstd_root}/common/zstd_errors.h
-    ${zstd_root}/common/fse.h
-    ${zstd_root}/common/huf.h
-    ${zstd_root}/common/mem.h
-    ${zstd_root}/common/xxhash.h
-    ${zstd_root}/common/zstd_internal.h
-    ${zstd_root}/dictBuilder/zdict.h
-    ${zstd_root}/deprecated/zbuff.h
-    ${zstd_root}/common/entropy_common.c
-    ${zstd_root}/common/zstd_common.c
-    ${zstd_root}/common/error_private.c
-    ${zstd_root}/common/xxhash.c
-    ${zstd_root}/common/pool.c
-    ${zstd_root}/common/fse_decompress.c
-    ${zstd_root}/compress/fse_compress.c
-    ${zstd_root}/compress/huf_compress.c
-    ${zstd_root}/compress/zstd_compress.c
-    ${zstd_root}/compress/zstd_opt.c
-    ${zstd_root}/compress/zstd_ldm.c
-    ${zstd_root}/compress/zstd_lazy.c
-    ${zstd_root}/compress/zstd_fast.c
-    ${zstd_root}/compress/zstd_double_fast.c
-    ${zstd_root}/decompress/huf_decompress.c
-    ${zstd_root}/decompress/zstd_decompress.c
-    ${zstd_root}/dictBuilder/divsufsort.c
-    ${zstd_root}/dictBuilder/zdict.c
-    ${zstd_root}/dictBuilder/cover.c
-    ${zstd_root}/deprecated/zbuff_compress.c
-    ${zstd_root}/deprecated/zbuff_decompress.c
+set(SRCS
+    ${root}/common/bitstream.h
+    ${root}/common/error_private.h
+    ${root}/common/zstd_errors.h
+    ${root}/common/fse.h
+    ${root}/common/huf.h
+    ${root}/common/mem.h
+    ${root}/common/xxhash.h
+    ${root}/common/zstd_internal.h
+    ${root}/dictBuilder/zdict.h
+    ${root}/deprecated/zbuff.h
+    ${root}/common/entropy_common.c
+    ${root}/common/zstd_common.c
+    ${root}/common/error_private.c
+    ${root}/common/xxhash.c
+    ${root}/common/pool.c
+    ${root}/common/fse_decompress.c
+    ${root}/compress/fse_compress.c
+    ${root}/compress/huf_compress.c
+    ${root}/compress/zstd_compress.c
+    ${root}/compress/zstd_opt.c
+    ${root}/compress/zstd_ldm.c
+    ${root}/compress/zstd_lazy.c
+    ${root}/compress/zstd_fast.c
+    ${root}/compress/zstd_double_fast.c
+    ${root}/decompress/huf_decompress.c
+    ${root}/decompress/zstd_decompress.c
+    ${root}/dictBuilder/divsufsort.c
+    ${root}/dictBuilder/zdict.c
+    ${root}/dictBuilder/cover.c
+    ${root}/deprecated/zbuff_compress.c
+    ${root}/deprecated/zbuff_decompress.c
 )
 
-set(ZSTD_BUILD
-    ${zstd_root}/../../build/build_zstd.cmake
+set(BUILD
+    ${root}/../../build/build_zstd.cmake
 )
 
 add_library(zstd OBJECT 
-  ${ZSTD_PUBLIC_HDRS} 
-	${ZSTD_SRCS}
-	${ZSTD_BUILD}
+	${PUBLIC_HDRS} 
+	${SRCS}
+	${BUILD}
 )
-						
-set_property(TARGET zstd APPEND PROPERTY FOLDER 3rdParty)
-
-target_include_directories(zstd PUBLIC "${zstd_root}")
-target_include_directories(zstd PRIVATE "${zstd_root}/common")
-
-source_group("Public Headers" FILES ${ZSTD_PUBLIC_HDRS})
-source_group("Source" FILES ${ZSTD_PRIVATE_HDRS} ${ZSTD_SRCS})
-source_group("Build" FILES ${ZSTD_BUILD})
+				
+settings3rdParty(zstd)	
+		
+target_include_directories(zstd PUBLIC "${root}")
+target_include_directories(zstd PRIVATE "${root}/common")

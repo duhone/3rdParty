@@ -1,31 +1,29 @@
-set(stb_root "${CMAKE_CURRENT_LIST_DIR}/../stb")
+set(root "${CMAKE_CURRENT_LIST_DIR}/../stb")
 
-set(STB_PUBLIC_HDRS
-    ${stb_root}/stb_image.h
-    ${stb_root}/stb_image_resize.h
-    ${stb_root}/stb_image_write.h
+set(PUBLIC_HDRS
+    ${root}/stb_image.h
+    ${root}/stb_image_resize.h
+    ${root}/stb_image_write.h
 )
 
-set(STB_SRCS
-    ${stb_root}/src/stb_image.cpp
-    ${stb_root}/src/stb_image_resize.cpp
-    ${stb_root}/src/stb_image_write.cpp
+set(SRCS
+    ${root}/src/stb_image.cpp
+    ${root}/src/stb_image_resize.cpp
+    ${root}/src/stb_image_write.cpp
 )
 
-set(STB_BUILD
-    ${stb_root}/../build/build_stb.cmake
+set(BUILD
+    ${root}/../build/build_stb.cmake
 )
 
 add_library(stb OBJECT 
-  ${STB_PUBLIC_HDRS} 
-	${STB_SRCS}
-	${STB_BUILD}
+	${PUBLIC_HDRS} 
+	${SSRCS}
+	${BUILD}
 )
-						
-set_property(TARGET stb APPEND PROPERTY FOLDER 3rdParty)
+	
+settings3rdParty(stb)					
 
-target_include_directories(stb PUBLIC "${stb_root}")
+set_property(TARGET stb APPEND PROPERTY LINKER_LANGUAGE CPP)
 
-source_group("Public Headers" FILES ${STB_PUBLIC_HDRS})
-source_group("Source" FILES ${STB_SRCS})
-source_group("Build" FILES ${STB_BUILD})
+target_include_directories(stb PUBLIC "${root}")
