@@ -307,10 +307,10 @@ settings3rdParty(opus)
 			
 target_compile_definitions(opus PRIVATE HAVE_CONFIG_H=1)
 
-target_include_directories(opus PUBLIC "${root}/../opus/include")
-target_include_directories(opus PRIVATE "${root}/../opus/celt")
-target_include_directories(opus PRIVATE "${root}/../opus/silk")
-target_include_directories(opus PRIVATE "${root}/../opus/silk/float")
-target_include_directories(opus PRIVATE "${root}/../opus")
+target_include_directories(opus SYSTEM PUBLIC "${root}/include")
+target_include_directories(opus PRIVATE "${root}/celt")
+target_include_directories(opus PRIVATE "${root}/silk")
+target_include_directories(opus PRIVATE "${root}/silk/float")
+target_include_directories(opus PRIVATE "${root}")
 
 	

@@ -24,4 +24,4 @@ add_library(imgui OBJECT
 
 settings3rdParty(imgui)
 						
-target_include_directories(imgui PUBLIC "${root}")
+target_include_directories(imgui SYSTEM PUBLIC "${root}")

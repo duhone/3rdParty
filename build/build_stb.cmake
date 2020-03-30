@@ -26,4 +26,4 @@ settings3rdParty(stb)
 
 set_property(TARGET stb APPEND PROPERTY LINKER_LANGUAGE CPP)
 
-target_include_directories(stb PUBLIC "${root}")
+target_include_directories(stb SYSTEM PUBLIC "${root}")

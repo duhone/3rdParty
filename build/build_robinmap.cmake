@@ -20,6 +20,6 @@ settings3rdParty(robinmap)
 
 set_property(TARGET robinmap APPEND PROPERTY LINKER_LANGUAGE CPP)
 
-target_include_directories(robinmap PUBLIC "${root}/include")
+target_include_directories(robinmap SYSTEM PUBLIC "${root}/include")
 
 		

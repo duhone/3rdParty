@@ -15,7 +15,7 @@ add_library(libretro OBJECT
 			
 settings3rdParty(libretro)
 			
-target_include_directories(libretro PUBLIC "${root}")
+target_include_directories(libretro SYSTEM PUBLIC "${root}")
 
 set_property(TARGET libretro APPEND PROPERTY LINKER_LANGUAGE CPP)
 				

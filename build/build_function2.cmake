@@ -17,4 +17,4 @@ settings3rdParty(function2)
 
 set_property(TARGET function2 APPEND PROPERTY LINKER_LANGUAGE CPP)
 
-target_include_directories(function2 PUBLIC "${root}/include")
+target_include_directories(function2 SYSTEM PUBLIC "${root}/include")

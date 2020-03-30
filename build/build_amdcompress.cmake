@@ -16,7 +16,7 @@ settings3rdParty(amdcompress)
 
 set_property(TARGET amdcompress APPEND PROPERTY LINKER_LANGUAGE CPP)
 
-target_include_directories(amdcompress PUBLIC "${root}/include")
+target_include_directories(amdcompress SYSTEM PUBLIC "${root}/include")
 target_link_libraries(amdcompress PUBLIC "${root}/lib/x64/AMDCompress_MT_DLL.lib")
 
 

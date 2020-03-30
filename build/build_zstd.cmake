@@ -50,5 +50,5 @@ add_library(zstd OBJECT
 				
 settings3rdParty(zstd)	
 		
-target_include_directories(zstd PUBLIC "${root}")
+target_include_directories(zstd SYSTEM PUBLIC "${root}")
 target_include_directories(zstd PRIVATE "${root}/common")

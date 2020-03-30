@@ -16,6 +16,6 @@ settings3rdParty(cli11)
 
 set_property(TARGET cli11 APPEND PROPERTY LINKER_LANGUAGE CPP)
 
-target_include_directories(cli11 PUBLIC "${root}")
+target_include_directories(cli11 SYSTEM PUBLIC "${root}")
 
 		

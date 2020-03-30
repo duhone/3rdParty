@@ -31,4 +31,4 @@ add_library(fmt OBJECT
 )
 settings3rdParty(fmt)
 						
-target_include_directories(fmt PUBLIC "${root}/include")
+target_include_directories(fmt SYSTEM PUBLIC "${root}/include")

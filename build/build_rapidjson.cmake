@@ -18,6 +18,6 @@ settings3rdParty(rapidjson)
 
 set_property(TARGET rapidjson APPEND PROPERTY LINKER_LANGUAGE CPP)
 
-target_include_directories(rapidjson PUBLIC "${root}/include")
+target_include_directories(rapidjson SYSTEM PUBLIC "${root}/include")
 target_compile_definitions(rapidjson PUBLIC RAPIDJSON_HAS_STDSTRING)
 

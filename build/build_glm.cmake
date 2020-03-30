@@ -18,5 +18,5 @@ settings3rdParty(glm)
 
 set_property(TARGET glm APPEND PROPERTY LINKER_LANGUAGE CPP)
 
-target_include_directories(glm PUBLIC "${root}")
+target_include_directories(glm SYSTEM PUBLIC "${root}")
 target_compile_definitions(glm PUBLIC GLM_FORCE_CXX17)

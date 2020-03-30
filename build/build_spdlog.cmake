@@ -24,4 +24,4 @@ settings3rdParty(spdlog)
 
 set_property(TARGET spdlog APPEND PROPERTY LINKER_LANGUAGE CPP)
 
-target_include_directories(spdlog PUBLIC "${root}/include")
+target_include_directories(spdlog SYSTEM PUBLIC "${root}/include")

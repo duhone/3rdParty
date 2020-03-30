@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.12)
+cmake_minimum_required (VERSION 3.17)
 set(CMAKE_CONFIGURATION_TYPES "Debug;RelWithDebInfo;Profile;Final") 
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
