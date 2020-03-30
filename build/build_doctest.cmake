@@ -16,4 +16,4 @@ settings3rdParty(doctest)
 
 set_property(TARGET doctest APPEND PROPERTY LINKER_LANGUAGE CPP)
 
-target_include_directories(doctest SYSTEM PUBLIC "${root}/doctest")
+target_include_directories(doctest SYSTEM PUBLIC "${root}")
