@@ -1,7 +1,7 @@
-#pragma once
+﻿#pragma once
 
 #pragma warning(push, 1)
 
-#include "AMDCompress.h"
+#include "include/AMDCompress.h"
 
 #pragma warning(pop)
