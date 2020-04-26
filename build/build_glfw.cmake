@@ -21,4 +21,5 @@ target_include_directories(glfw SYSTEM PUBLIC "${root}/include")
 target_compile_definitions(glfw PUBLIC GLFW_INCLUDE_NONE GLFW_INCLUDE_VULKAN GLFW_DLL GLFW_EXPOSE_NATIVE_WIN32)
 target_link_libraries(glfw PUBLIC "${root}/lib-vc2019/glfw3dll.lib")
 
+set(glfw_dll "${root}/lib-vc2019/glfw3.dll")
 
