@@ -298,7 +298,7 @@ set(BUILD
     ${root}/../build/build_opus.cmake
 )
 
-add_library(opus OBJECT 
+add_library(opus 
 	${PUBLIC_HDRS} 
 	${SRCS}
 	${BUILD})

@@ -24,7 +24,7 @@ set(BUILD
     ${root}/../build/build_fmt.cmake
 )
 
-add_library(fmt OBJECT 
+add_library(fmt 
 	${PUBLIC_HDRS} 
 	${SRCS}
 	${BUILD}

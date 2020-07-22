@@ -16,7 +16,7 @@ set(BUILD
     ${root}/../build/build_stb.cmake
 )
 
-add_library(stb OBJECT 
+add_library(stb 
 	${PUBLIC_HDRS} 
 	${SSRCS}
 	${BUILD}

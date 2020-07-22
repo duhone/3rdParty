@@ -16,7 +16,7 @@ set(BUILD
     ${root}/../build/build_imgui.cmake
 )
 
-add_library(imgui OBJECT 
+add_library(imgui 
     ${PUBLIC_HDRS} 
 	${SRCS}
 	${BUILD}
