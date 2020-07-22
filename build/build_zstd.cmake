@@ -42,7 +42,7 @@ set(BUILD
     ${root}/../../build/build_zstd.cmake
 )
 
-add_library(zstd OBJECT 
+add_library(zstd 
 	${PUBLIC_HDRS} 
 	${SRCS}
 	${BUILD}
