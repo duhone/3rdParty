@@ -1,7 +1,7 @@
-#pragma once
+﻿#pragma once
 
 #pragma warning(push, 1)
 
-#include "samplerate.h"
+#include <samplerate.h>
 
 #pragma warning(pop)
